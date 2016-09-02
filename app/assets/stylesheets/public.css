@@ -1,0 +1,14 @@
+.public-image {
+  text-align: center;
+}
+
+.public-image img {
+  display: block;
+  margin: auto;
+}
+
+@media screen and (max-width: 590px) {
+  .public-image img {
+    width: 100%;
+  }
+}

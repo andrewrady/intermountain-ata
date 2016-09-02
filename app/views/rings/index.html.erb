@@ -1,0 +1,33 @@
+<h1>Rings</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Ring Number</th>
+      <th>Age</th>
+      <th>Rank</th>
+      <th>Gender</th>
+      <% if user_signed_in? %>
+        <th>Edit</th>
+        <th>Delete</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ring.each do | ring | %>
+      <tr>
+        <td data-label='Ring Number'><%= ring.ring_number %></td>
+        <td data-label='Age'><%= ring.ring_age %></td>
+        <td data-label='Rank'><%= ring.ring_rank %></td>
+        <td data-label='Gender'><%= ring.ring_gender %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to('Edit', edit_ring_path(ring)) %></td>
+          <td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class='jumbotron'>
+  <p>ADVERTISEMENT AREA</p>
+</div>
