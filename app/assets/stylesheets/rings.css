@@ -19,6 +19,16 @@
   padding-left: 0;
 }
 
+.title {
+  margin-top: 0;
+}
+
+.jumbotron p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
 
 @media screen and (max-width: 450px) {
 
