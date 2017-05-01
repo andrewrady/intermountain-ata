@@ -1,5 +1,5 @@
 class RingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+ # before_action :authenticate_user!, :except => [:index]
 
   def index
     @ring = Ring.all.reorder('ring_number ASC')
