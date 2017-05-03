@@ -49,6 +49,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.8'
 end
 
 group :production do

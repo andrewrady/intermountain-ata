@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'add ring' do
 	scenario 'visit add ring path' do
+		sign_in_user
 		visit '/rings/new' 
 
 		expect(page).to have_content('Add New Ring')
@@ -10,6 +11,7 @@ RSpec.feature 'add ring' do
 
 
 	scenario 'add ring number' do
+		sign_in_user
 		visit '/rings/new'
 
 		fill_in 'Ring number', with: '1'	
@@ -20,7 +22,8 @@ RSpec.feature 'add ring' do
 	end
 
 	scenario 'add ring rank' do
-		visit 'rings/new'
+		sign_in_user
+		visit '/rings/new'
 
 		fill_in 'Ring rank', with: 'white-yellow'
 
@@ -30,7 +33,8 @@ RSpec.feature 'add ring' do
 	end
 	
 	scenario 'add ring age' do
-		visit 'rings/new'
+		sign_in_user
+		visit '/rings/new'
 
 		fill_in 'Ring age', with: '18-29'
 
@@ -40,7 +44,8 @@ RSpec.feature 'add ring' do
 	end
 
 	scenario 'add ring gender' do
-		visit 'rings/new'
+		sign_in_user
+		visit '/rings/new'
 
 		fill_in 'Ring gender', with: 'Men'
 
