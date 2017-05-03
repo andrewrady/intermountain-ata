@@ -43,6 +43,17 @@ RSpec.feature 'add ring' do
 		expect(page).to have_content('18-29')
 	end
 
+	scenario 'add ring division' do
+		sign_in_user
+		visit '/rings/new'
+
+		fill_in 'Division', with: 'Traditional'
+
+		click_button('Submit')
+
+		expect(page).to have_content('Traditional')
+	end
+
 	scenario 'add ring gender' do
 		sign_in_user
 		visit '/rings/new'
