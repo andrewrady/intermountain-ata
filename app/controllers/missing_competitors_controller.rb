@@ -1,0 +1,2 @@
+class MissingCompetitorsController < ApplicationController
+end

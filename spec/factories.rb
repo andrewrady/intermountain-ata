@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :missing_competitor do
+    name "MyString"
+    ring ""
+  end
 
   factory :ring do
     id "1"
