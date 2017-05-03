@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826225832) do
+ActiveRecord::Schema.define(version: 20170503060633) do
 
   create_table "rings", force: :cascade do |t|
     t.integer  "ring_number"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160826225832) do
     t.string   "ring_gender"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "division"
   end
 
   create_table "users", force: :cascade do |t|

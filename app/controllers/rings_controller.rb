@@ -43,7 +43,7 @@ class RingsController < ApplicationController
 
   private
     def ring_params
-      params.require(:ring).permit(:ring_number, :ring_rank, :ring_age, :ring_gender)
+      params.require(:ring).permit(:ring_number, :ring_rank, :ring_age, :ring_gender, :division)
       #code
     end
 end
