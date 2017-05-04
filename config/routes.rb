@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'public#index'
 
-  resources :rings
+  resources :rings do
+    resources :missing_competitors
+  end
+
 
   get '/about' => 'public#about'
   # The priority is based upon order of creation: first created -> highest priority.

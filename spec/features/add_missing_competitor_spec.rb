@@ -10,7 +10,7 @@ RSpec.feature 'allows missing competitor' do
 
 		fill_in "Name", with: "Andrew Rady"
 
-		click_button('Submit')
+		click_button('Add Name')
 
 		expect(page).to have_content('Andrew Rady')
 	end

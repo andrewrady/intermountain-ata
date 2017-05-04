@@ -1,3 +1,3 @@
 class Ring < ActiveRecord::Base
-	has_many :missing_competitor
+	has_many :missing_competitors
 end

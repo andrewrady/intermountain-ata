@@ -1,4 +1,19 @@
-<%= form_for @competitor do |c| %>
-	<%= c.label :name %>
-	<%= c.text_field :name %>
-<% end %>
+<div class="modal fade" tabindex="-1" role="dialog" id='add-competitor'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Missing Person</h4>
+      </div>
+      <div class="modal-body">
+				<%= form_for([@ring, @ring.missing_competitors.build]) do |c| %>	
+					<%= c.label :name %>
+					<%= c.text_field :name %>
+			</div>
+			<div class="modal-footer">
+					<%= c.submit('Add Name') %>
+				<% end %>
+			</div>
+    </div>
+  </div>
+</div>

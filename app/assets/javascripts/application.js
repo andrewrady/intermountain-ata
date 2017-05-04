@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var ready;
+
+ready = function() {
+	$('.competitor-button').on('click', function(){
+		$('#add-competitor').modal('show'); 
+	});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+

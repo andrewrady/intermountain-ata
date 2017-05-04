@@ -3,6 +3,7 @@ class RingsController < ApplicationController
 
   def index
     @ring = Ring.all.reorder('ring_number ASC')
+    @competitor = MissingCompetitor.all
   end
 
   def show
@@ -15,6 +16,7 @@ class RingsController < ApplicationController
 
   def edit
     @ring = Ring.find(params[:id])
+    @competitor = MissingCompetitor.new
   end
 
   def create
