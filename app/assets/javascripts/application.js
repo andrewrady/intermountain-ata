@@ -20,6 +20,25 @@ ready = function() {
 	$('.competitor-button').on('click', function(){
 		$('#add-competitor').modal('show'); 
 	});
+
+	$('.upcoming-rings').hide();
+
+	$('#upcoming-tab').on('click', function(e){
+		e.preventDefault();
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		$('.upcoming-rings').show();
+		$('.upcoming-rings').siblings().hide();
+	});
+
+	$('#active-tab').on('click', function(e){
+		e.preventDefault();
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		$('.active-rings').show();
+		$('.active-rings').siblings().hide();
+	});
+
 };
 
 $(document).ready(ready);

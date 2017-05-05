@@ -2,7 +2,8 @@ class RingsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
 
   def index
-    @ring = Ring.all.reorder('ring_number ASC')
+    @ring = Ring.all.where(:status => true).reorder('ring_number ASC')
+		@upcoming = Ring.all.where(:status =>false).reorder('ring_number ASC')
     @competitor = MissingCompetitor.all
   end
 

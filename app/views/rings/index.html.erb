@@ -24,37 +24,80 @@
 <% end %>
 
 <h1>Rings</h1>
+<div class='tab-content'>
+	<ul class=' nav nav-tabs' role='tablist'>
+		<li role='presentation' class='active' id='active-tab'><a href='#'>Active</a></li>
+		<li role='resentation' id='upcoming-tab'><a href='#'>Upcoming</a></li>
+	</ul>
+</div>
+<div>
+<div class='active-rings'>
+	<table class="table table-bordered table-striped">
+  	<thead>
+    	<tr>
+      	<th>Ring Number</th>
+      	<th>Age</th>
+      	<th>Rank</th>
+      	<th>Division</th>
+      	<th>Gender</th> 
+      	<% if user_signed_in? %>
+        	<th>Edit</th>
+        	<th>Delete</th>
+      	<% end %>
+    	</tr>
+  	</thead>
+  	<tbody>
+    	<% @ring.each do | ring | %>
+      	<tr>
+        	<td data-label='Ring Number'><%= ring.ring_number %></td>
+        	<td data-label='Age'><%= ring.ring_age %></td>
+		<td data-label='Rank'><%= ring.ring_rank %></td>
+		<td data-label="Division"><%= ring.division %></td>
+        	<td data-label='Gender'><%= ring.ring_gender %></td>
+        	<% if user_signed_in? %>
+          	<td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
+          	<td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+        	<% end %>
+      	</tr>
+    	<% end %>
+  	</tbody>
+	</table>
+</div>
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Ring Number</th>
-      <th>Age</th>
-      <th>Rank</th>
-      <th>Division</th>
-      <th>Gender</th> 
-      <% if user_signed_in? %>
-        <th>Edit</th>
-        <th>Delete</th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ring.each do | ring | %>
-      <tr>
-        <td data-label='Ring Number'><%= ring.ring_number %></td>
-        <td data-label='Age'><%= ring.ring_age %></td>
-	<td data-label='Rank'><%= ring.ring_rank %></td>
-	<td data-label="Division"><%= ring.division %></td>
-        <td data-label='Gender'><%= ring.ring_gender %></td>
-        <% if user_signed_in? %>
-          <td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
-          <td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class='upcoming-rings'>
+	<table class="table table-bordered table-striped">
+  	<thead>
+    	<tr>
+      	<th>Ring Number</th>
+      	<th>Age</th>
+      	<th>Rank</th>
+      	<th>Division</th>
+      	<th>Gender</th> 
+      	<% if user_signed_in? %>
+        	<th>Edit</th>
+        	<th>Delete</th>
+      	<% end %>
+    	</tr>
+  	</thead>
+  	<tbody>
+    	<% @upcoming.each do | ring | %>
+      	<tr>
+        	<td data-label='Ring Number'><%= ring.ring_number %></td>
+        	<td data-label='Age'><%= ring.ring_age %></td>
+		<td data-label='Rank'><%= ring.ring_rank %></td>
+		<td data-label="Division"><%= ring.division %></td>
+        	<td data-label='Gender'><%= ring.ring_gender %></td>
+        	<% if user_signed_in? %>
+          	<td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
+          	<td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+        	<% end %>
+      	</tr>
+    	<% end %>
+  	</tbody>
+	</table>
+</div>
+</div>
+
 <div class='jumbotron'>
   <h3 class='title'>Up Coming Tournament:</h3>
   <h4>Frederick’s ATA Martial Arts</h4>
