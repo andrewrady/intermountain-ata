@@ -55,8 +55,8 @@
 		<td data-label="Division"><%= ring.division %></td>
         	<td data-label='Gender'><%= ring.ring_gender %></td>
         	<% if user_signed_in? %>
-          	<td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
-          	<td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+          	<td data-label='Edit'><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
+          	<td data-label='Delete'><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
         	<% end %>
       	</tr>
     	<% end %>
@@ -89,9 +89,9 @@
 		<td data-label="Division"><%= ring.division %></td>
         	<td data-label='Gender'><%= ring.ring_gender %></td>
         	<% if user_signed_in? %>
-          	<td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
-          	<td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
-						<td><%= link_to('Move to current', ring_change_status_path(ring), :method => :post, :confirm => 'Are you sure?') %></td>
+          	<td data-label='Edit'><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
+          	<td data-label='Delete'><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+						<td data-label='Change'><%= link_to('Move to current', ring_change_status_path(ring), :method => :post, :confirm => 'Are you sure?') %></td>
         	<% end %>
       	</tr>
     	<% end %>
