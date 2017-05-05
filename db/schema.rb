@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503063914) do
+ActiveRecord::Schema.define(version: 20170505045946) do
 
   create_table "missing_competitors", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170503063914) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "division"
+    t.boolean  "status"
   end
 
   create_table "users", force: :cascade do |t|
