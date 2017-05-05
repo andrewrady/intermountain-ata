@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :rings do
     resources :missing_competitors
+		post 'change_status'
   end
 
 

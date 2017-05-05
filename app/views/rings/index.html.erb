@@ -76,6 +76,7 @@
       	<% if user_signed_in? %>
         	<th>Edit</th>
         	<th>Delete</th>
+					<th>Change Status</th>
       	<% end %>
     	</tr>
   	</thead>
@@ -90,6 +91,7 @@
         	<% if user_signed_in? %>
           	<td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
           	<td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+						<td><%= link_to('Move to current', ring_change_status_path(ring), :method => :post, :confirm => 'Are you sure?') %></td>
         	<% end %>
       	</tr>
     	<% end %>

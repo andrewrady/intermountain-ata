@@ -44,6 +44,23 @@ class RingsController < ApplicationController
     redirect_to rings_path
   end
 
+	def change_status
+		@upcoming = Ring.find(params[:ring_id])
+		@ring = Ring.where("ring_number = ?", @upcoming.ring_number)
+
+		@old = @ring.first
+		@new = @ring.second
+
+		#remove and alter rings
+		@old.destroy
+		@new.status = true
+		@new.save
+
+		redirect_to rings_path
+
+	end
+
+
   private
     def ring_params
       params.require(:ring).permit(:ring_number, :ring_rank, :ring_age, :ring_gender, :division, :status)
