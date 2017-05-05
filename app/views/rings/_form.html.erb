@@ -28,6 +28,10 @@
         <%= r.label :ring_gender %>
         <%= r.text_field :ring_gender, :class => 'form-control', :placeholder => 'Ring Number' %>
       </div>
+			<div class='col-md-6'>
+				<%= r.label :status %><br>
+				<%= r.select :status, options_for_select([['Current','1'], ['Upcoming', '0']]), {}, {:class => 'form-control'} %>
+			</div>
     </div>
 
 		<div class='row input-container'>

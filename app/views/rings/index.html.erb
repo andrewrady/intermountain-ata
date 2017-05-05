@@ -48,7 +48,7 @@
 	<td data-label="Division"><%= ring.division %></td>
         <td data-label='Gender'><%= ring.ring_gender %></td>
         <% if user_signed_in? %>
-          <td><%= link_to('Edit', edit_ring_path(ring)) %></td>
+          <td><%= link_to('Edit', edit_ring_path(ring), method: :get) %></td>
           <td><%= link_to('Delete', ring_path(ring), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
         <% end %>
       </tr>
