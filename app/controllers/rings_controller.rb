@@ -48,16 +48,20 @@ class RingsController < ApplicationController
 		@upcoming = Ring.find(params[:ring_id])
 		@ring = Ring.where("ring_number = ?", @upcoming.ring_number)
 
-		@old = @ring.first
-		@new = @ring.second
+		if @ring.second.present?
+			@old = @ring.first
+			@new = @ring.second
 
-		#remove and alter rings
-		@old.destroy
-		@new.status = true
-		@new.save
-
-		redirect_to rings_path
-
+			#remove and alter rings
+			@old.destroy
+			@new.status = true
+			@new.save
+			redirect_to rings_path
+		else
+			@upcoming.status = true
+			@upcoming.save
+			redirect_to rings_path
+		end
 	end
 
 
