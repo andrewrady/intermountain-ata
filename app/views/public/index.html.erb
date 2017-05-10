@@ -1,2 +1,148 @@
-<%= image_tag('ATA-NEW-LOGO') %>
-<p>(Looking for rings? header over to <%= link_to('our schedule page!', rings_path, method: :get) %>)</p>
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Intermountain ATA</h1>
+                        <h3><%= @event.name %></h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <%= link_to rings_path, :class => 'btn btn-default btn-lg' do %>
+                                <span class="network-name">Rings</span>
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to '#', :class => 'btn btn-default btn-lg' do %>
+                                    <span class="network-name">Registration</span>
+                                <% end %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Tournament Location</h2>
+										<p class="lead"><%= @event.description %></p>
+                    <ul>
+                        <li><%= @event.date %></li>
+                        <li><a href="#">Schedule of Events</a></li>
+                        <li><%= @event.location %></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag('map.png', :class => 'img-responsive') %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Hotel Information</h2>
+                    <p class="lead">The Holiday Inn</p>
+                    <ul>
+                        <li>Special Rates</li>
+                        <li><a href="#">Link to their website</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <%= image_tag('hotel.jpg', :class => 'img-responsive') %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Online Registration</h2>
+                    <p class="lead">Currently you should registre with your instruction. We do have a link below with a pdf of the registration form to give to your instructors.</p>   
+                    <ul>
+                        <li><a href="#">Registration Form</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag('computer.png', :class => 'img-responsive') %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Features of Intermountain ATA: </h3>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <%= link_to rings_path, :class => 'btn btn-default btn-lg' do %>
+                                <span class="network-name">Rings</span>
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to '#', :class => 'btn btn-default btn-lg' do %>
+                                    <span class="network-name">Registration</span>
+                                <% end %>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+
+</body>
+
+</html>

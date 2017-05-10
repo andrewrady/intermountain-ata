@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :event do
+    name "MyString"
+    description "MyText"
+    date "MyString"
+    location "MyString"
+  end
   factory :missing_competitor do
     name "MyString"
     ring ""
