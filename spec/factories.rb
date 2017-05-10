@@ -1,4 +1,13 @@
 FactoryGirl.define do
+  factory :hotel do
+    name "MyString"
+    dates "MyString"
+    cost 1.5
+    link "MyString"
+    number "MyString"
+    address "MyString"
+    event nil
+  end
   factory :event do
     name "MyString"
     description "MyText"

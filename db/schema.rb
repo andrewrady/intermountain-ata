@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510055055) do
+ActiveRecord::Schema.define(version: 20170510071659) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20170510055055) do
     t.integer  "schedule_file_size"
     t.datetime "schedule_updated_at"
   end
+
+  create_table "hotels", force: :cascade do |t|
+    t.string   "name"
+    t.string   "dates"
+    t.float    "cost"
+    t.string   "link"
+    t.string   "number"
+    t.string   "address"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "hotels", ["event_id"], name: "index_hotels_on_event_id"
 
   create_table "missing_competitors", force: :cascade do |t|
     t.string   "name"
