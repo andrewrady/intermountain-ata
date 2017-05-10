@@ -9,7 +9,10 @@
 	<%= e.text_field :date %>
 
 	<%= e.label :schedule %>
-	<%= e.file_form :scheduel %>
+	<%= e.file_field :schedule %>
+
+	<%= e.label :status %>
+	<%= e.select :status, options_for_select([['Upcoming','1'], ['Old', '0']]), {}, {:class => 'form-control'} %>
 
 	<%= e.submit('Save') %>
  
