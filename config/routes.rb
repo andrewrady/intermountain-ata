@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :missing_competitors
 		post 'change_status'
   end
-	resources :events
+	resources :events do
+		resources :hotels
+	end
 
 
   get '/about' => 'public#about'

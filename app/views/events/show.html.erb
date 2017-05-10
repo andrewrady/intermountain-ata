@@ -1,0 +1,30 @@
+<h1><%= @event.name %></h1>
+<p><%= @event.description %></p>
+
+<h2>Hotels for Event</h2>
+<% @event.hotels.each do |h| %>
+	<p><%= h.name %></p>
+<% end %>
+
+<%= form_for([@event, @event.hotels.build]) do |h| %>
+	<%= h.label :name %>
+	<%= h.text_field :name %>
+
+	<%= h.label :dates %>
+	<%= h.text_field :dates %>
+
+	<%= h.label :cost %>
+	<%= h.text_field :cost %>
+
+	<%= h.label :link %>
+	<%= h.text_field :link %>
+
+	<%= h.label :number %>
+	<%= h.text_field :number %>
+
+	<%= h.label :address %>
+	<%= h.text_field :address %>
+
+	<%= h.submit('Submit') %>
+
+<% end %>
