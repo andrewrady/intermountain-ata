@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510052211) do
+ActiveRecord::Schema.define(version: 20170510055055) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "date"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.boolean  "status"
+    t.string   "schedule_file_name"
+    t.string   "schedule_content_type"
+    t.integer  "schedule_file_size"
+    t.datetime "schedule_updated_at"
   end
 
   create_table "missing_competitors", force: :cascade do |t|
