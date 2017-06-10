@@ -29,7 +29,12 @@
     </div>
      <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to('Add', new_ring_path) %></li>
+        <li><%= link_to('Add Ring', new_ring_path) %></li>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><%= link_to('Add Event', new_event_path, method: :get) %></li>
+				</ul>
+				</li>
         <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
       </ul>
      <% end %>
