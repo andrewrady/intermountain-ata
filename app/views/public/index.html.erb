@@ -20,7 +20,7 @@
                                 <% end %>
                             </li>
                             <li>
-                                <%= link_to '#', :class => 'btn btn-default btn-lg' do %>
+                                <%= link_to '#registration', :class => 'btn btn-default btn-lg' do %>
                                     <span class="network-name">Registration</span>
                                 <% end %>
                             </li>
@@ -105,7 +105,7 @@
     </div>
     <!-- /.content-section-b -->
 
-    <div class="content-section-a">
+    <div class="content-section-a" id="registration">
 
         <div class="container">
 
@@ -116,7 +116,8 @@
                     <h2 class="section-heading">Online Registration</h2>
                     <p class="lead">Currently you should register with your instruction. We do have a link below with a pdf of the registration form to give to your instructors.</p>   
                     <ul>
-                        <li><a href="#">Registration Form</a></li>
+                        <li><%= link_to('Registration form', asset_path('tournament-registration.pdf'), target: '_blank')  %></li>
+												<li><%= link_to('Tiger registration form', asset_path('tournament-registration-tigers.pdf'), target: '_blank') %></li>
                     </ul>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
