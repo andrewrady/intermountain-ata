@@ -13,7 +13,7 @@
 		</thead>
 		<% @competitor.each do |c| %> 
     	<tr>
-        <td data-label='Ring Number'><%= c.ring_id %></td>
+        <td data-label='Ring Number'><%= c.ring.ring_number %></td>
         <td data-label='Name'><%= c.name %></td>
 			<% if user_signed_in? %>
 				<td><%= link_to('Delete', [c.ring, c], method: :delete, data: { confirm: 'Are you sure?'})  %></td>
