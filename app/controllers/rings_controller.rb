@@ -1,10 +1,12 @@
 class RingsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
+  before_filter :event_menu
 
   def index
     @ring = Ring.all.where(:status => true).reorder('ring_number ASC')
 		@upcoming = Ring.all.where(:status =>false).reorder('ring_number ASC')
     @competitor = MissingCompetitor.all
+
   end
 
   def show
@@ -70,4 +72,8 @@ class RingsController < ApplicationController
       params.require(:ring).permit(:ring_number, :ring_rank, :ring_age, :ring_gender, :division, :status)
       #code
     end
+
+		def event_menu
+			@event_menu = Event.all
+		end
 end
