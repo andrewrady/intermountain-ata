@@ -7,7 +7,11 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <h1>Intermountain ATA</h1>
-                        <h3><%= @event.name %></h3>
+                        <% if @event.blank? %>
+													<p>No Tournament listed</p>
+												<% else %>
+													<h3><%= @event.name %></h3>
+												<% end %>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
@@ -42,14 +46,18 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Tournament Location</h2>
-										<p class="lead"><%= @event.description %></p>
-                    <ul>
+										<% if @event.blank? %>
+											<p class="lead">No tournament</p>
+										<% else %>
+											<p class="lead"><%= @event.description %></p>
+                    	<ul>
                         <li><%= @event.date %></li>
                         <% if @event.schedule.present? %>
 													<li><%=  link_to 'Schedule of Event', @event.schedule.url, target: '_blank' %></li>
 												<% end %>
                         <li><%= @event.location %></li>
-                    </ul>
+                    	</ul>
+										<% end %>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <%= image_tag('map.png', :class => 'img-responsive') %>
@@ -106,7 +114,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Online Registration</h2>
-                    <p class="lead">Currently you should registre with your instruction. We do have a link below with a pdf of the registration form to give to your instructors.</p>   
+                    <p class="lead">Currently you should register with your instruction. We do have a link below with a pdf of the registration form to give to your instructors.</p>   
                     <ul>
                         <li><a href="#">Registration Form</a></li>
                     </ul>
