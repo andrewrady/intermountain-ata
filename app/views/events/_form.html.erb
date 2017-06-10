@@ -1,19 +1,37 @@
 <%= form_for @event do |e| %>
-	<%= e.label :name %>
-	<%= e.text_field :name %>
+  <div class='row'>
+		<div class='col-md-6'>
+			<%= e.label :name %>
+			<%= e.text_field :name, :class => 'form-control' %>
+  	</div>
 
-	<%= e.label :location %>
-	<%= e.text_field :location %>
+		<div class='col-md-3'>
+			<%= e.label :location %>
+			<%= e.text_field :location, :class => 'form-control' %>
+		</div>
+	
+		<div class='col-md-3'>	
+			<%= e.label :status %>
+			<%= e.select :status, options_for_select([['Upcoming','1'], ['Old', '0']]), {}, {:class => 'form-control'} %>	
+		</div>
 
-	<%= e.label :date %>
-	<%= e.text_field :date %>
+	</div>
 
-	<%= e.label :schedule %>
-	<%= e.file_field :schedule %>
+	<div class='row'>
+		<div class='col-md-6'>
+			<%= e.label :date %>
+			<%= e.text_field :date, :class => 'form-control' %>
+		</div>
+		<div class='col-md-4'>
+			<%= e.label :schedule %>
+			<%= e.file_field :schedule %>
+		</div>
+	</div>
 
-	<%= e.label :status %>
-	<%= e.select :status, options_for_select([['Upcoming','1'], ['Old', '0']]), {}, {:class => 'form-control'} %>
+	<div class='row'>
+		<div class='col-md-6'>
+			<%= e.submit('Save', :class => 'btn btn-primary') %>
+ 		</div>
+	</div>
 
-	<%= e.submit('Save') %>
- 
 <% end %>
