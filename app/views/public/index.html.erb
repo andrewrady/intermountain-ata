@@ -71,17 +71,21 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Hotel Information</h2>
-                    <% @event.hotels.each do |hotel| %>
-											<p class="lead"><%= hotel.name %></p>
-											<ul>
-                        <li>Price: <%= hotel.cost %></li>
-                        <li>Address: <%= hotel.address %></li>
-                  			<li>Dates: <%= hotel.dates %></li>  	
-												<li>Number: <%= hotel.number %></li>
-												<li>Website: <%= link_to hotel.link, 'http://'+hotel.link, target: '_blank'  %></li>
-											</ul>
-										<% end %> 
-                </div>
+                 <% if @event.blank? %>   
+										<p>No hotel information at this time</p>
+									<% else %>	
+										<% @event.hotels.each do |hotel| %>
+												<p class="lead"><%= hotel.name %></p>
+												<ul>
+                        	<li>Price: <%= hotel.cost %></li>
+                        	<li>Address: <%= hotel.address %></li>
+                  				<li>Dates: <%= hotel.dates %></li>  	
+													<li>Number: <%= hotel.number %></li>
+													<li>Website: <%= link_to hotel.link, 'http://'+hotel.link, target: '_blank'  %></li>
+												</ul>
+											<% end %> 	
+                <% end %>
+								</div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <%= image_tag('hotel.jpg', :class => 'img-responsive') %>
                 </div>

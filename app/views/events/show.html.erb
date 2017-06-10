@@ -9,8 +9,10 @@
 	<p>Address: <%= h.address %></p>
 	<p>Number: <%= h.number %></p>
 	<p>Website: <%= h.link %></p>
+  <hr>
 <% end %>
 
+<h1>Add Hotel Information</h1>
 <%= form_for([@event, @event.hotels.build]) do |h| %>
 	<div class='row'>
 		<div class='col-md-5'>
