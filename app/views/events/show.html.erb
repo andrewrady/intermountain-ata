@@ -1,30 +1,53 @@
 <h1><%= @event.name %></h1>
+<p>Date: <%= @event.date %></p> 
 <p><%= @event.description %></p>
 
 <h2>Hotels for Event</h2>
 <% @event.hotels.each do |h| %>
-	<p><%= h.name %></p>
+	<p><%= h.name %> <%= link_to('Delete', [h.event, h], method: :delete, data: { confirm: 'Are you sure?' }) %></p>
+	<p>Price: <%= h.cost %></p>
+	<p>Address: <%= h.address %></p>
+	<p>Number: <%= h.number %></p>
+	<p>Website: <%= h.link %></p>
 <% end %>
 
 <%= form_for([@event, @event.hotels.build]) do |h| %>
-	<%= h.label :name %>
-	<%= h.text_field :name %>
+	<div class='row'>
+		<div class='col-md-5'>
+			<%= h.label :name %>
+			<%= h.text_field :name, :class => 'form-control' %>
+		</div>
+	
+		<div class='col-md-4'>
+			<%= h.label :dates %>
+			<%= h.text_field :dates, :class => 'form-control' %>
+		</div>
+	</div>
 
-	<%= h.label :dates %>
-	<%= h.text_field :dates %>
+	<div class='row'>
+		<div class='col-md-5'>
+			<%= h.label :cost %>
+			<%= h.text_field :cost, :class => 'form-control' %>
+		</div>
 
-	<%= h.label :cost %>
-	<%= h.text_field :cost %>
+		<div class='col-md-4'>
+			<%= h.label :link %>
+			<%= h.text_field :link, :class => 'form-control' %>
+		</div>
+	</div>
 
-	<%= h.label :link %>
-	<%= h.text_field :link %>
+	<div class='row'>
+		<div class='col-md-5'>
+			<%= h.label :number %>
+			<%= h.text_field :number, :class => 'form-control' %>
+		</div>
 
-	<%= h.label :number %>
-	<%= h.text_field :number %>
+		<div class='col-md-4'>
+			<%= h.label :address %>
+			<%= h.text_field :address, :class => 'form-control' %>
+		</div>
+	</div>
 
-	<%= h.label :address %>
-	<%= h.text_field :address %>
-
-	<%= h.submit('Submit') %>
+	<%= h.submit 'Submit', :class => 'btn btn-primary' %>
 
 <% end %>
