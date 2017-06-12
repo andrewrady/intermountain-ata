@@ -5,7 +5,7 @@ class PublicController < ApplicationController
 		@event = Event.where(:status => true).first
   end
 
-  def about
+  def contact
     #code
   end
 end
