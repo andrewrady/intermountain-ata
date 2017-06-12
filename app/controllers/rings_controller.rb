@@ -7,6 +7,7 @@ class RingsController < ApplicationController
 		@upcoming = Ring.all.where(:status =>false).reorder('ring_number ASC')
     @competitor = MissingCompetitor.all
 
+		@tournament = Event.where(:status => true).last
   end
 
   def show
