@@ -51,11 +51,11 @@
 										<% else %>
 											<p class="lead"><%= @event.description %></p>
                     	<ul>
-                        <li><%= @event.date %></li>
+                        <li>Date: <%= @event.date %></li>
                         <% if @event.schedule.present? %>
 													<li><%=  link_to 'Schedule of Event', @event.schedule.url, target: '_blank' %></li>
 												<% end %>
-                        <li><%= @event.location %></li>
+                        <li>Location: <%= @event.location %></li>
                     	</ul>
 										<% end %>
                 </div>
