@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :event_menu
 
 	def show
-		@event = Event.find(params[:id])
+		@event = Event.find(params[:id])	
 	end
 
   def new

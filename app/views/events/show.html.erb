@@ -1,11 +1,11 @@
-<h1><%= @event.name %> </h1>
+<h><%= @event.name %> </h1>
 <%= link_to('Edit', edit_event_path(@event)) %> <%= link_to('Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }) %>
 <p>Date: <%= @event.date %></p> 
 <p><%= @event.description %></p>
 
 <h2>Hotels for Event</h2>
 <% @event.hotels.each do |h| %>
-	<p><%= h.name %> <%= link_to('Delete', [h.event, h], method: :delete, data: { confirm: 'Are you sure?' }) %></p>
+	<p><%= h.name %> <%= link_to('Delete', [h.event, h], method: :delete, data: { confirm: 'Are you sure?' }) %> <%= link_to("edit", edit_event_hotel_path(h.event, h)) %></p>
 	<p>Price: <%= h.cost %></p>
 	<p>Address: <%= h.address %></p>
 	<p>Number: <%= h.number %></p>
@@ -14,43 +14,4 @@
 <% end %>
 
 <h1>Add Hotel Information</h1>
-<%= form_for([@event, @event.hotels.build]) do |h| %>
-	<div class='row'>
-		<div class='col-md-5'>
-			<%= h.label :name %>
-			<%= h.text_field :name, :class => 'form-control' %>
-		</div>
-	
-		<div class='col-md-4'>
-			<%= h.label :dates %>
-			<%= h.text_field :dates, :class => 'form-control' %>
-		</div>
-	</div>
-
-	<div class='row'>
-		<div class='col-md-5'>
-			<%= h.label :cost %>
-			<%= h.text_field :cost, :class => 'form-control' %>
-		</div>
-
-		<div class='col-md-4'>
-			<%= h.label :link %>
-			<%= h.text_field :link, :class => 'form-control' %>
-		</div>
-	</div>
-
-	<div class='row'>
-		<div class='col-md-5'>
-			<%= h.label :number %>
-			<%= h.text_field :number, :class => 'form-control' %>
-		</div>
-
-		<div class='col-md-4'>
-			<%= h.label :address %>
-			<%= h.text_field :address, :class => 'form-control' %>
-		</div>
-	</div>
-
-	<%= h.submit 'Submit', :class => 'btn btn-primary' %>
-
-<% end %>
+<%= render 'hotels/form' %>
