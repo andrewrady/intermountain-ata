@@ -19,7 +19,7 @@
 
 			<div class='col-md-6'>
        <%= r.label :division %>
-       <%= r.select :division, options_for_select([['Traditional', 'Traditioanl'], ['XMA', 'XMA'], ['Creative', 'Creative']]), {}, {:class => 'form-control', :placeholder => 'Divison'} %>
+       <%= r.text_field :division, :class => 'form-control', :placeholder => 'Divison' %>
     	</div>
 		</div>
 
