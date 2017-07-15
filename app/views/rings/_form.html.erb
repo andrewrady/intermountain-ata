@@ -16,10 +16,10 @@
         <%= r.label :ring_age%>
         <%= r.text_field :ring_age, :class => 'form-control', :placeholder => 'Ring Number' %>
       </div>
-	 
+
 			<div class='col-md-6'>
        <%= r.label :division %>
-       <%= r.text_field :division, :class => 'form-control', :placeholder => 'Divison' %>
+       <%= r.select :division, options_for_select([['Traditional', 'Traditioanl'], ['XMA', 'XMA'], ['Creative', 'Creative']]), {}, {:class => 'form-control', :placeholder => 'Divison'} %>
     	</div>
 		</div>
 
