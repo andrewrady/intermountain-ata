@@ -1,3 +1,3 @@
-class MissingCompetitor < ActiveRecord::Base
-	belongs_to :ring
+class MissingCompetitor < ActiveRecord
+	belongs_to :ring, optional: true
 end

@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'public#index'
-
-  resources :rings do
-    resources :missing_competitors
-		post 'change_status'
-  end
-	resources :events do
-		resources :hotels
-	end
-
-
-  get '/contact' => 'public#contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

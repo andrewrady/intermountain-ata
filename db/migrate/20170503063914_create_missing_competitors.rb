@@ -1,4 +1,4 @@
-class CreateMissingCompetitors < ActiveRecord::Migration
+class CreateMissingCompetitors < ActiveRecord::Migration[4.2]
   def change
     create_table :missing_competitors do |t|
       t.string :name

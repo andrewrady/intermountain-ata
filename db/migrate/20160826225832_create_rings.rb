@@ -1,4 +1,4 @@
-class CreateRings < ActiveRecord::Migration
+class CreateRings < ActiveRecord::Migration[4.2]
   def change
     create_table :rings do |t|
         t. integer  :ring_number

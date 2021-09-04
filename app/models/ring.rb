@@ -1,3 +1,3 @@
-class Ring < ActiveRecord::Base
+class Ring < ActiveRecord
 	has_many :missing_competitors, :dependent => :destroy
 end

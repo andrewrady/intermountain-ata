@@ -1,3 +1,3 @@
-class Hotel < ActiveRecord::Base
+class Hotel < ActiveRecord
   belongs_to :event
 end
