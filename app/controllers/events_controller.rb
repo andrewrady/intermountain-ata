@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :event_menu
 
 	def show
 		@event = Event.find(params[:id])	
@@ -41,14 +40,8 @@ class EventsController < ApplicationController
 		redirect_to rings_path
 	end
 
-
   private
     def event_params
       params.require(:event).permit(:name, :description, :date, :location, :status, :schedule)
     end
-
-		def event_menu
-			@event_menu = Event.all
-		end
-
 end

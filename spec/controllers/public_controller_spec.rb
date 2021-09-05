@@ -13,12 +13,4 @@ RSpec.describe PublicController, type: :controller do
       expect(response).to render_template('index')
     end
   end
-
-  describe "Get #about" do
-    it 'renders the about template' do
-      get :about
-      expect(response).to render_template('about')
-    end
-  end
-
 end

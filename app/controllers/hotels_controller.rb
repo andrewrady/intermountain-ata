@@ -1,7 +1,5 @@
 class HotelsController < ApplicationController
 	before_action :authenticate_user!
-  before_filter :event_menu
-
 
 	def create
 		@event = Event.find(params[:event_id])
@@ -26,7 +24,6 @@ class HotelsController < ApplicationController
 
 	end
 
-
   def destroy
 		@event = Event.find(params[:event_id])
 		@hotel = @event.hotels.find(params[:id])
@@ -39,10 +36,4 @@ class HotelsController < ApplicationController
 		def hotel_params
 			params.require(:hotel).permit(:name, :dates, :cost, :link, :number, :address)
 		end
-
-
-		def event_menu
-      @event_menu = Event.all
-    end
-
 end
