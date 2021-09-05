@@ -1,4 +1,4 @@
-class Event < ActiveRecord
+class Event < ApplicationRecord 
 	has_many :hotels
 
 	has_attached_file :schedule, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

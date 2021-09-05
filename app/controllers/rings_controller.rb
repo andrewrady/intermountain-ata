@@ -1,17 +1,11 @@
 class RingsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
-  before_filter :event_menu
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @ring = Ring.all.where(:status => true).reorder('ring_number ASC')
-		@upcoming = Ring.all.where(:status =>false).reorder('id ASC')
+    @upcoming = Ring.all.where(:status => false).reorder('id ASC')
     @competitor = MissingCompetitor.all
-
-		@tournament = Event.where(:status => true).last
-  end
-
-  def show
-    #code
+    @tournament = Event.where(:status => true).last
   end
 
   def new
@@ -47,34 +41,29 @@ class RingsController < ApplicationController
     redirect_to rings_path
   end
 
-	def change_status
-		@upcoming = Ring.find(params[:ring_id])
-		@ring = Ring.where("ring_number = ?", @upcoming.ring_number)
+  def change_status
+    @upcoming = Ring.find(params[:ring_id])
+    @ring = Ring.where("ring_number = ?", @upcoming.ring_number)
 
-		if @ring.second.present?
-			@old = @ring.first
-			@new = @ring.second
+    if @ring.second.present?
+      @old = @ring.first
+      @new = @ring.second
 
-			#remove and alter rings
-			@old.destroy
-			@new.status = true
-			@new.save
-			redirect_to rings_path
-		else
-			@upcoming.status = true
-			@upcoming.save
-			redirect_to rings_path
-		end
-	end
-
+      #remove and alter rings
+      @old.destroy
+      @new.status = true
+      @new.save
+      redirect_to rings_path
+    else
+      @upcoming.status = true
+      @upcoming.save
+      redirect_to rings_path
+    end
+  end
 
   private
     def ring_params
       params.require(:ring).permit(:ring_number, :ring_rank, :ring_age, :ring_gender, :division, :status)
       #code
     end
-
-		def event_menu
-			@event_menu = Event.all
-		end
 end

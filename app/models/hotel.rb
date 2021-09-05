@@ -1,3 +1,3 @@
-class Hotel < ActiveRecord
+class Hotel < ApplicationRecord 
   belongs_to :event
 end
