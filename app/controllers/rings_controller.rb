@@ -3,9 +3,6 @@ class RingsController < ApplicationController
 
   def index
     @ring = Ring.all.where(:status => true).reorder('ring_number ASC')
-    @upcoming = Ring.all.where(:status => false).reorder('id ASC')
-    @competitor = MissingCompetitor.all
-    @tournament = Event.where(:status => true).last
   end
 
   def new
