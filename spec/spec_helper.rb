@@ -16,9 +16,9 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 def sign_in_user
-	@user ||= FactoryGirl.create :user
+	@user ||= FactoryBot.create :user
 	page.driver.post user_session_path, :user => {:email => @user.email, :password => @user.password}
 
 end

@@ -9,17 +9,28 @@ RSpec.describe RingsController, type: :controller do
     end
   end
 
-  describe "Get new ring" do
-    it 'responds with template for new ring' do
+  describe 'authenicated user #new' do
+    login_user 
+
+    it 'responds successfully with HTTP 200 status code' do
       get :new
-      expect(response).to render_template('new')
+
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+    end
+
+    it 'succesfully creates new ring record' do
+      post :create, params: { ring: {ring_number: 1, ring_rank: "white-yellow", ring_age: "18-29", ring_gender: "women" }}
+      expect(response).to redirect_to rings_path
     end
   end
 
-  # describe "get edit ring" do
-  #   it "responds with remplate for edit ring" do
-  #     get :edit
-  #     expect(responds).to render_template('edit')
-  #   end
-  # end
+  describe 'Get as unauthenticated users' do
+    it 'redirects to login if user is unauthenticated' do
+      get :new
+
+      expect(response).to redirect_to new_user_session_path
+      expect(response).to have_http_status(302)
+    end
+  end
 end
