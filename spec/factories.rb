@@ -25,6 +25,16 @@ FactoryBot.define do
     ring_rank { "white-yellow" }
     ring_age { "18-29" }
     ring_gender { "women" }
+    status { true }
+  end
+
+  factory :upcoming_ring do
+    id { "2" }
+    ring_number { "1" }
+    ring_rank { "white-yellow" }
+    ring_age { "18-29" }
+    ring_gender { "women" }
+    status { false }
   end
 
   factory :user do
